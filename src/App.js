@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Person from './class05/Person'
+import Person from './class07/Person'
 import './App.css';
 
 class App extends Component {

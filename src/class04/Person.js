@@ -1,5 +1,6 @@
 import React from 'react'
 // Que es la propieda chlidren
+// Cada vez que cambiemos un props se hace un rerender
 const Person = (props) => {
     return (
         <div>
