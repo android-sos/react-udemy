@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 
-import Person from './class10/Person'
+import Person from './class11/Person'
 import './App.css';
 
 class App extends Component {
   state = {
-    name:''
+    person: [
+     { name:'jose', age:12},
+     { name:'pedro', age:19},
+     { name:'andres', age:22},
+    ]
   }
-  changeName = () => {
-    this.setState({name:'DDDD'});
-    console.log('sasas');
-  }
+
 
   render() {
 
     return (
       <div className="App">
-        
-        <Person name='samuel' age='12'>Me gusta el Futbol</Person>
-        <Person name={this.state.name} onClick = { this.changeName} />
-        <Person/>
-        <Person/>
-        <Person/>
+         {
+            this.state.person.map((person)=>{
+              return (
+                <Person name={person.name} age={person.age}/>
+              )
+            })
+         }
       </div>
     );
   }
