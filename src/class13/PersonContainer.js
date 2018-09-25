@@ -6,9 +6,14 @@ import Person from './Person'
 class PersonContainer extends Component {
 
   render() {
-    const list =  this.props.persons.map((person)=>{
+    const list =  this.props.persons.map((person, index)=>{
       return (
-        <Person name={person.name} age={person.age}/>
+        <Person 
+        key={index}
+        name={person.name} 
+        age={person.age}
+        deletePerson={()=>this.props.deletePerson(index)}
+        />
       )
     });
       
