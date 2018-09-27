@@ -14,7 +14,7 @@ const CharComponet = (props)=> {
        {
           [...props.text||''].map((c, index)=>{
            return (
-            <div key={index} style={st}>
+            <div key={index} style={st} onClick={()=>props.delete(index)}>
             {c}
            </div>
            )
@@ -50,17 +50,24 @@ class App extends Component {
   state = {
     text:''
   }
+  deleteCharHandle = (index) => {
+   console.log(index);
+   let newText= [...this.state.text];
+   newText.splice(index,1);
+   this.setState({text: newText.join('')})
+  }
+
   changeTextHandle = (e) => {
-    console.log(e.target.value)
     this.setState({text:e.target.value});
   }
+
   render() {
     const {text}= this.state;
     return (
       <div className="App">
-         <input type='text' onChange={this.changeTextHandle}/>
+         <input type='text' onChange={this.changeTextHandle} value={this.state.text}/>
          <ValidationComponent lenght={text.length}/>
-         <CharComponet text = {text}/>
+         <CharComponet text = {text} delete={this.deleteCharHandle}/>
       </div>
     );
   }
