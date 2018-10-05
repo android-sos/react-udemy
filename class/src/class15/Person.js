@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { ButtonDelete } from './ButtonDelete'
 import './Person.css'
 import Radium from 'radium';
 
@@ -11,9 +11,9 @@ class Person extends Component {
     render () {
         console.log(this.props.key);
         return (
-            <div key={this.props.id} style={this.props.classes}>  
+            <div style={this.props.classes}>  
                 <h1>Yo soy {this.props.name } de edad: { this.props.age}</h1>
-                <button style={this.props.classes} onClick={this.props.deletePerson}>Click</button>
+                <ButtonDelete style={this.props.classes} onClick={this.props.deletePerson}>Click</ButtonDelete>
             </div>
         )
     }
