@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PersonContainer from './class16_Event_Hooks/PersonContainer'
+import PersonContainer from './class17_Pass_Props/PersonContainer'
 import './App.css';
 
 class App extends Component {

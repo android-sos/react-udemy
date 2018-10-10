@@ -18,10 +18,11 @@ class Person extends Component {
     
     
     render () {
+        this.name = this.props.name;
         return (
             <div style={this.props.classes}>  
                 <h1>Yo soy {this.props.name } de edad: { this.props.age}</h1>
-                <ButtonDelete style={this.props.classes} onClick={this.props.deletePerson}>Click</ButtonDelete>
+                <ButtonDelete {...this.props}>Click</ButtonDelete>
             </div>
         )
     }
