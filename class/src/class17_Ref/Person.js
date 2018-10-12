@@ -21,7 +21,8 @@ class Person extends Component {
     }
     
     componentDidMount() {
-      this.setState({name: this.props.name, lastname: this.props.lastname,});
+      this.setState({name: this.props.name, lastname: this.props.lastname});
+      this.inputElement.focus();
     }
 
     onChangedName (e) {
@@ -39,6 +40,7 @@ class Person extends Component {
         return (
             <div style={this.props.classes}  >  
                 <input type="text" 
+                ref ={ (r)=> this.inputElement = r}
                 value={this.state.name} 
                 onChange={this.onChangedName.bind(this)}>
                 </input>
@@ -46,7 +48,7 @@ class Person extends Component {
                 value={this.state.lastname} 
                 onChange={this.onChangeLastName}>
                 </input>
-                <button   key={this.props.id} style={this.props.classes} onClick={this.props.deletePerson}>Click</button>
+                <button key={this.props.id} style={this.props.classes} onClick={this.props.deletePerson}>Click</button>
             </div>
         )
     }

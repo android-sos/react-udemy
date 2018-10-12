@@ -53,7 +53,7 @@ class PersonContainer extends Component {
 
       return (
         <Person 
-        id={person.id}
+        id={index}
         key={person.id}
         name={person.name} 
         lastname={person.lastname}
