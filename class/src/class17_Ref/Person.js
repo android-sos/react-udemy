@@ -15,9 +15,9 @@ class Person extends Component {
         };
         this.onChangeLastName = this.onChangeLastName.bind(this);
     }
-
+    
     componentWillUnmount() {
-       
+        console.log(this.state.name);
     }
     
     componentDidMount() {
@@ -26,12 +26,10 @@ class Person extends Component {
     }
 
     onChangedName (e) {
-        console.log(e.target);
         this.setState({name: e.target.value});
     }
 
     onChangeLastName (e) {
-        console.log(e.target);
         this.setState({lastname: e.target.value});
     }
   

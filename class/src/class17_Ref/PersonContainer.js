@@ -31,7 +31,6 @@ class PersonContainer extends Component {
   deletePerson = personIndex => event => {
    this.state.persons.splice(personIndex, 1);
    this.setState({persons: this.state.persons});
-   console.log(this.state.persons);
   }
 
 
