@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 import ProTypes from 'prop-types'
-import Classes from './burgerIngrdients.css'
+import Classes from './BurgerIngredients.css'
 
 
  class BurgerIngrdients extends Component{
